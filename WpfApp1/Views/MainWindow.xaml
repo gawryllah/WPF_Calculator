@@ -41,38 +41,40 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Text="0" />
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding TbVal}" x:Name="tb1"/>
 
         <!--#region NUMBERS -->
 
         <!-- left col -->
-        <Button Grid.Row="1" Grid.Column="0" Content="7" />
-        <Button Grid.Row="2" Grid.Column="0" Content="4" />
-        <Button Grid.Row="3"  Grid.Column="0" Content="1" />
+        <Button Grid.Row="1" Grid.Column="0" Content="7" Command="{Binding AddNumberCommand}" CommandParameter="7"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="4" Command="{Binding AddNumberCommand}" CommandParameter="4"/>
+        <Button Grid.Row="3"  Grid.Column="0" Content="1" Command="{Binding AddNumberCommand}" CommandParameter="1"/>
 
         <!-- mid col -->
-        <Button Grid.Row="1" Grid.Column="1" Content="8" />
-        <Button Grid.Row="2" Grid.Column="1" Content="5" />
-        <Button Grid.Row="3"  Grid.Column="1" Content="2" />
+        <Button Grid.Row="1" Grid.Column="1" Content="8" Command="{Binding AddNumberCommand}" CommandParameter="8"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="5" Command="{Binding AddNumberCommand}" CommandParameter="5"/>
+        <Button Grid.Row="3"  Grid.Column="1" Content="2" Command="{Binding AddNumberCommand}" CommandParameter="2"/>
 
         <!-- right col -->
-        <Button Grid.Row="1" Grid.Column="2" Content="9" />
-        <Button Grid.Row="2" Grid.Column="2" Content="6" />
-        <Button Grid.Row="3"  Grid.Column="2" Content="3" />
+        <Button Grid.Row="1" Grid.Column="2" Content="9" Command="{Binding AddNumberCommand}" CommandParameter="9"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="6" Command="{Binding AddNumberCommand}" CommandParameter="6"/>
+        <Button Grid.Row="3"  Grid.Column="2" Content="3" Command="{Binding AddNumberCommand}" CommandParameter="3"/>
 
+        <!-- bottom -->
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" Content="0" Command="{Binding AddNumberCommand}" CommandParameter="0"/>
         <!--#endregion -->
 
         <!-- bottom row -->
-        <Button Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" Content="0" />
-        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="2" Content="." />
-        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="3" Content="C" />
+
+        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="2" Content="." Command="{Binding AddNumberCommand}" CommandParameter="."/>
+        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="3" Content="C" Command="{Binding ClearScreenCommand}"/>
 
         <!-- other controls -->
-        <Button Grid.Row="3" Grid.RowSpan="2" Grid.Column="4" Content="=" />
-        <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" Content="+" />
-        <Button Grid.Row="1" Grid.RowSpan="1" Grid.Column="3" Content="/" />
-        <Button Grid.Row="2" Grid.RowSpan="1" Grid.Column="3" Content="-" />
-        <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="3" Content="*" />
+        <Button Grid.Row="3" Grid.RowSpan="2" Grid.Column="4" Content="=" Command="{Binding GetResultCommand}" />
+        <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" Content="+" Command="{Binding AddOperationCommand}" CommandParameter="+"/>
+        <Button Grid.Row="1" Grid.RowSpan="1" Grid.Column="3" Content="/" Command="{Binding AddOperationCommand}" CommandParameter="/"/>
+        <Button Grid.Row="2" Grid.RowSpan="1" Grid.Column="3" Content="-" Command="{Binding AddOperationCommand}" CommandParameter="-"/>
+        <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="3" Content="*" Command="{Binding AddOperationCommand}" CommandParameter="*"/>
 
     </Grid>
 </mah:MetroWindow>

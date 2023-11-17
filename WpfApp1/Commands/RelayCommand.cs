@@ -7,6 +7,7 @@ namespace WpfApp1.Commands
     {
         readonly Action<object> _execute;
         readonly Predicate<object> _canExecute;
+        private ICommand? getResult;
 
         public event EventHandler? CanExecuteChanged
         {
@@ -22,6 +23,11 @@ namespace WpfApp1.Commands
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
+        }
+
+        public RelayCommand(ICommand? getResult)
+        {
+            this.getResult = getResult;
         }
 
         public bool CanExecute(object? parameter)
