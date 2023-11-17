@@ -7,6 +7,16 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         Title="Kalkulator" Height="450" Width="800">
+
+    <mah:MetroWindow.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </mah:MetroWindow.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -26,7 +36,7 @@
         <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
 
         <!--#region NUMBERS -->
-        
+
         <!-- left col -->
         <Button Grid.Row="1" Grid.Column="0" Content="7" />
         <Button Grid.Row="2" Grid.Column="0" Content="4" />
@@ -48,7 +58,7 @@
         <Button Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" Content="0" />
         <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="2" Content="." />
         <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="3" Content="C" />
-        
+
         <!-- other controls -->
         <Button Grid.Row="3" Grid.RowSpan="2" Grid.Column="4" Content="=" />
         <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" Content="+" />
