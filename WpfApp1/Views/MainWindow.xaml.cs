@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1
 {
@@ -10,6 +11,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }

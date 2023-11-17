@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
   </ItemGroup>
 
